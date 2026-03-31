@@ -1,7 +1,7 @@
-# Vul hier de naam van je programma in:
+# Vul hier de naam van je programma in: Mc Pizzeria
 #
 #
-# Vul hier jullie namen in:
+# Vul hier jullie namen in: Sebastiaan
 #
 #
 #
