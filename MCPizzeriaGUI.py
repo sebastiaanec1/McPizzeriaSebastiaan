@@ -23,6 +23,19 @@ venster.iconbitmap("MC_icon.ico") #Let op: Dit werkt niet op een MAC! Zet deze r
 venster.wm_title("MC Pizzeria")
 knopSluit = Button(venster, text="Afsluiten", width=15, command=venster.destroy)
 knopSluit.grid(row=17, column=4)
+
+LabelKlantnaam = Label(venster, text="klantnaam")
+LabelKlantnaam.grid(row=1, column=0)
+ingevoerde_klantnaam = StringVar()
+invoerveldKlantnaam = Entry(venster, textvariable=ingevoerde_klantnaam)
+invoerveldKlantnaam.grid(row=1, column=1, sticky="W")
+
+LabelKlantNr = Label(venster, text="klantnummer")
+LabelKlantNr.grid(row=2, column=0)
+invoerveldKlantNr = Entry(venster)
+invoerveldKlantNr.grid(row=2, column=1, sticky="W")
+
+
 labelIntro = Label(venster, text="Welkom!")
 labelIntro.grid(row=0, column=0, sticky="W")
 
