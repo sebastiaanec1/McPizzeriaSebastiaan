@@ -15,9 +15,16 @@ import MCPizzeriaSQL
 
 ### ---------  Functie definities  -----------------
 def zoekKlant():
- gevonden_klanten = MCPizzeriaSQL.zoekKlantInTabel(ingevoerde_klantnaam.get())
- print(gevonden_klanten) 
+    gevonden_klanten = MCPizzeriaSQL.zoekKlantInTabel(ingevoerde_klantnaam.get())
+    print(gevonden_klanten) 
+    invoerveldKlantnaam.delete(0, END) 
+    invoerveldKlantNr.delete(0, END) 
+    for rij in gevonden_klanten: 
+        invoerveldKlantNr.insert(END, rij[0])
+        invoerveldKlantnaam.insert(END, rij[1])    
 
+ 
+            
 ### --------- Hoofdprogramma  ---------------
 
 venster = Tk()
@@ -42,6 +49,8 @@ invoerveldKlantNr.grid(row=2, column=1, sticky="W")
 
 labelIntro = Label(venster, text="Welkom!")
 labelIntro.grid(row=0, column=0, sticky="W")
+
+
 
 
 

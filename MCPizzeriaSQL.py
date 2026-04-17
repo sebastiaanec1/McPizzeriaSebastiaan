@@ -72,8 +72,6 @@ def zoekKlantInTabel(ingevoerde_klantnaam):
         print("Klant toegevoegd aan 'tbl_klanten':" + ingevoerde_klantnaam )
         printTabel("tbl_klanten")
     
-        cursor.execute("SELECT * FROM tbl_klanten WHERE klantAchternaam = ?",(ingevoerde_klantnaam,))
-        zoek_resultaat = cursor.fetchall()
 
     return zoek_resultaat
 
@@ -85,5 +83,5 @@ def zoekKlantInTabel(ingevoerde_klantnaam):
 #verwijderPizza("Hawaii")
 #printTabel("tbl_pizzas")
 #pasGerechtAan(3, "salamiii", 19.25)
-#voegKlantToe("Janssen")
-#voegKlantToe("Smit")
+#voegKlantToe("Janssen") #
+# voegKlantToe("Smit")
