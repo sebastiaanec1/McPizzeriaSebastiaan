@@ -60,6 +60,23 @@ def voegKlantToe(naam_nieuwe_klant):
     db.commit()
     print("Klant toegevoegd:")
     printTabel("tbl_klanten")
+
+def zoekKlantInTabel(ingevoerde_klantnaam):
+    cursor.execute("SELECT * FROM tbl_klanten WHERE klantAchternaam = ?", (ingevoerde_klantnaam,))
+    zoek_resultaat = cursor.fetchall()
+    if zoek_resultaat == []: 
+        print("Geen klant gevonden met achternaam", ingevoerde_klantnaam)
+        print("Klant wordt nu toegevoegd.")
+        cursor.execute("INSERT INTO tbl_klanten VALUES(NULL, ? )", (ingevoerde_klantnaam, ))
+        db.commit() 
+        print("Klant toegevoegd aan 'tbl_klanten':" + ingevoerde_klantnaam )
+        printTabel("tbl_klanten")
+    
+        cursor.execute("SELECT * FROM tbl_klanten WHERE klantAchternaam = ?",(ingevoerde_klantnaam,))
+        zoek_resultaat = cursor.fetchall()
+
+    return zoek_resultaat
+
 ### --------- Hoofdprogramma  ---------------
 #maakTabellenAan()
 #voegPizzaToe("Margherita", 9.50)
