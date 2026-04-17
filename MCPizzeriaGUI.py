@@ -29,6 +29,8 @@ LabelKlantnaam.grid(row=1, column=0)
 ingevoerde_klantnaam = StringVar()
 invoerveldKlantnaam = Entry(venster, textvariable=ingevoerde_klantnaam)
 invoerveldKlantnaam.grid(row=1, column=1, sticky="W")
+KnopZoekOpKlantnaam = Button(venster, text="Zoek klant", width=12)
+KnopZoekOpKlantnaam.grid(row=1, column=4, sticky="W")
 
 LabelKlantNr = Label(venster, text="klantnummer")
 LabelKlantNr.grid(row=2, column=0)
